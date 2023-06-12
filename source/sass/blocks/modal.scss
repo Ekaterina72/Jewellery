@@ -81,7 +81,7 @@
     height: 40px;
     padding: 0;
 
-    background: $color-neon-blue;
+    background: $color-accent;
     border: none;
     cursor: pointer;
 
@@ -91,7 +91,7 @@
       background: $color-default-white;
 
       &::before {
-        background-color: $color-neon-blue;
+        background-color: $color-accent;
       }
     }
 
