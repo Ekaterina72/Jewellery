@@ -1,20 +1,18 @@
 .main-nav {
-  &__list {
-    display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
+  display: flex;
+  margin: 0;
+  margin-right: 20px;
+  margin-left: 60px;
+  padding: 0;
 
-    list-style: none;
-  }
+  list-style: none;
 
   &__item {
     margin-right: 20px;
   }
 
   &__link {
-    color: $color-default-white;
+    color: $color-main-dark;
 
     &.is-active {
       opacity: 0.6;

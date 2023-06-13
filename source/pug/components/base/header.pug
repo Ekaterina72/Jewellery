@@ -1,36 +1,84 @@
 mixin header(headerMods, currentUrl)
   -
-    const headerLinks = [
+    const mainLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "#",
+        text: "What’s new"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Chokers"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Necklaces"
+      },
+      {
+        href: "#",
+        text: "Rings"
+      },
+      {
+        href: "#",
+        text: "Earrings"
       },
     ]
 
-  header.header(class=headerMods)
+    const additionalLinks = [
+      {
+        href: "#",
+        text: "About CH"
+      },
+      {
+        href: "#",
+        text: "Stores & Hours"
+      },
+      {
+        href: "#",
+        text: "Contact Us"
+      },
+    ]
+
+    const userMenu = [
+      {
+        text: "Login"
+      },
+    ]
+
+  header.header(class=headerMods, data-header="sticky", data-hide-point="50")
     .container
       if(currentUrl === "index.html")
         //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
+        span.header__logo
+          +img("svg", "logo", "svg", 66, 66, "copmany logo.")
       else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        a.header__logo(href="index.html", aria-label="Переход на главную")
+          +img("svg", "logo", "svg", 66, 66, "copmany logo.")
+      nav.header__nav()
+        button.header__nav-toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
           +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link in headerLinks
+        .header__nav-wrapper
+          .header__input
+            input(type="search", placeholder="Type here to search")
+            +icon("icon-search", 14, 14)
+          ul.header__nav-list.main-nav
+            each link in mainLinks
               - const activeState = currentUrl === link.href
               li.main-nav__item
                 if(activeState)
                   span.main-nav__link.is-active= link.text
                 else
                   a.main-nav__link(href=link.href)= link.text
+          ul.header__nav-list.additional-nav
+            each link in additionalLinks
+              - const activeState = currentUrl === link.href
+              li.additional-nav__item
+                if(activeState)
+                  span.additional-nav__link.is-active= link.text
+                else
+                  a.additional-nav__link(href=link.href)= link.text
+          ul.header__nav-list.user-nav
+            each item in userMenu
+              li.user-nav__item
+                +btn({text : item.text})(class="btn--user")
+        button.header__cart(type="button") Cart
+          span  0
