@@ -1495,14 +1495,6 @@ button,
   background-color: transparent;
   border: none;
 }
-.header__input svg {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
 
 .header__nav-list {
   margin: 0;
