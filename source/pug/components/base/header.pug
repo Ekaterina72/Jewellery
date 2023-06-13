@@ -30,7 +30,7 @@ mixin header(headerMods, currentUrl)
       },
       {
         href: "#",
-        text: "Stores & Hours"
+        text: "Stores &amp;&nbsp;Hours"
       },
       {
         href: "#",
@@ -49,36 +49,39 @@ mixin header(headerMods, currentUrl)
       if(currentUrl === "index.html")
         //- lighthouse снимает 10 баллов SEO за <a> без href
         span.header__logo
-          +img("svg", "logo", "svg", 66, 66, "copmany logo.")
+          +icon("logo", 66, 66)
       else
         a.header__logo(href="index.html", aria-label="Переход на главную")
-          +img("svg", "logo", "svg", 66, 66, "copmany logo.")
+          +icon("logo", 66, 66)
       nav.header__nav()
         button.header__nav-toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-burger)
-          +icon("icon-burger", 20, 20)
+          +icon("icon-burger", 25, 18)
         .header__nav-wrapper
-          .header__input
-            input(type="search", placeholder="Type here to search")
-            +icon("icon-search", 14, 14)
-          ul.header__nav-list.main-nav
+          .header__search
+            form(method="get")
+              input(type="search", placeholder="Type here to search", name="search")
+              +icon("icon-search", 14, 14)
+          ul.header__nav-list.header__nav-list--main
             each link in mainLinks
               - const activeState = currentUrl === link.href
-              li.main-nav__item
+              li.header__nav-item
                 if(activeState)
-                  span.main-nav__link.is-active= link.text
+                  span.header__nav-link.is-active= link.text
                 else
-                  a.main-nav__link(href=link.href)= link.text
-          ul.header__nav-list.additional-nav
+                  a.header__nav-link(href=link.href)= link.text
+          ul.header__nav-list.header__nav-list--additional
             each link in additionalLinks
               - const activeState = currentUrl === link.href
-              li.additional-nav__item
+              li.header__nav-item
                 if(activeState)
-                  span.additional-nav__link.is-active= link.text
+                  span.header__nav-link.is-active!= link.text
                 else
-                  a.additional-nav__link(href=link.href)= link.text
-          ul.header__nav-list.user-nav
+                  a.header__nav-link(href=link.href)!= link.text
+          ul.header__nav-list.header__nav-list--user
             each item in userMenu
-              li.user-nav__item
-                +btn({text : item.text})(class="btn--user")
-        button.header__cart(type="button") Cart
-          span  0
+              li.header__nav-item
+                button.btn-reset.header__nav-link()!= item.text
+        button.header__cart.btn-reset(type="button")
+          span Cart
+          +icon("icon-cart", 20, 18)
+          span(data-cart-count)  0

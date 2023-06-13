@@ -21,47 +21,56 @@
   <body>
     <div class="wrapper">
       <header class="header header--sticky" data-header="sticky" data-hide-point="50">
-        <div class="container"><span class="header__logo"><img src="img/svg/logo.svg" srcset="img/svg/logo@2x.svg 2x" width="66" height="66" alt="copmany logo."></span>
+        <div class="container"><span class="header__logo">
+            <svg width="66" height="66" aria-hidden="true">
+              <use xlink:href="./img/stack.svg#logo"></use>
+            </svg></span>
           <nav class="header__nav">
             <button class="header__nav-toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger>
-              <svg width="20" height="20" aria-hidden="true">
+              <svg width="25" height="18" aria-hidden="true">
                 <use xlink:href="./img/stack.svg#icon-burger"></use>
               </svg>
             </button>
             <div class="header__nav-wrapper">
-              <div class="header__input">
-                <input type="search" placeholder="Type here to search">
-                <svg width="14" height="14" aria-hidden="true">
-                  <use xlink:href="./img/stack.svg#icon-search"></use>
-                </svg>
+              <div class="header__search">
+                <form method="get">
+                  <input type="search" placeholder="Type here to search" name="search">
+                  <svg width="14" height="14" aria-hidden="true">
+                    <use xlink:href="./img/stack.svg#icon-search"></use>
+                  </svg>
+                </form>
               </div>
-              <ul class="header__nav-list main-nav">
-                <li class="main-nav__item"><a class="main-nav__link" href="#">What’s new</a>
+              <ul class="header__nav-list header__nav-list--main">
+                <li class="header__nav-item"><a class="header__nav-link" href="#">What’s new</a>
                 </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Chokers</a>
+                <li class="header__nav-item"><a class="header__nav-link" href="#">Chokers</a>
                 </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Necklaces</a>
+                <li class="header__nav-item"><a class="header__nav-link" href="#">Necklaces</a>
                 </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Rings</a>
+                <li class="header__nav-item"><a class="header__nav-link" href="#">Rings</a>
                 </li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Earrings</a>
-                </li>
-              </ul>
-              <ul class="header__nav-list additional-nav">
-                <li class="additional-nav__item"><a class="additional-nav__link" href="#">About CH</a>
-                </li>
-                <li class="additional-nav__item"><a class="additional-nav__link" href="#">Stores &amp; Hours</a>
-                </li>
-                <li class="additional-nav__item"><a class="additional-nav__link" href="#">Contact Us</a>
+                <li class="header__nav-item"><a class="header__nav-link" href="#">Earrings</a>
                 </li>
               </ul>
-              <ul class="header__nav-list user-nav">
-                <li class="user-nav__item">
-                  <button class="btn btn--user" type="button">Login</button>
+              <ul class="header__nav-list header__nav-list--additional">
+                <li class="header__nav-item"><a class="header__nav-link" href="#">About CH</a>
+                </li>
+                <li class="header__nav-item"><a class="header__nav-link" href="#">Stores &amp;&nbsp;Hours</a>
+                </li>
+                <li class="header__nav-item"><a class="header__nav-link" href="#">Contact Us</a>
+                </li>
+              </ul>
+              <ul class="header__nav-list header__nav-list--user">
+                <li class="header__nav-item">
+                  <button class="btn-reset header__nav-link">Login</button>
                 </li>
               </ul>
             </div>
-            <button class="header__cart" type="button">Cart<span> 0</span></button>
+            <button class="header__cart btn-reset" type="button"><span>Cart</span>
+              <svg width="20" height="18" aria-hidden="true">
+                <use xlink:href="./img/stack.svg#icon-cart"></use>
+              </svg><span data-cart-count> 0</span>
+            </button>
           </nav>
         </div>
       </header>

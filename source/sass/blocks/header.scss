@@ -1,13 +1,33 @@
 .header {
   position: relative;
   padding: 20px 0;
-}
+  background-color: $color-default-white;
+  z-index: 10;
 
-.header--sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 114px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-light-accent;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
 }
 
 .header__logo {
@@ -15,34 +35,134 @@
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
+  color: $color-accent;
+  transition: color $trans-default;
+
+  svg {
+    width: 66px;
+    height: 66px;
+  }
+
+  @include vp-767 {
+    top: 20px;
+
+    svg {
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
+
+.header.is-open .header__logo {
+  color: $color-default-white;
+  z-index: 15;
 }
 
 .header__nav {
-  padding-top: 20px;
+  padding-top: 12px;
   display: grid;
-  grid-template-columns: auto min-content;
+  grid-template-columns: auto 82px;
 }
 
 .header__nav-wrapper {
   display: grid;
   grid-template-areas: "search user"
     "menu menu";
-  grid-template-columns: 49.5% 44%;
-  column-gap: 66px;
-  row-gap: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 62px;
+  overflow-y: auto;
+
+  @include vp-1023 {
+    padding: 136px 45px 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background-color: $color-accent;
+    color: $color-default-white;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    visibility: hidden;
+    z-index: 5;
+  }
+
+  @include vp-767 {
+    padding: 102px 15px 30px;
+  }
 }
 
-.header__input {
+.header.is-open .header__nav-wrapper {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}
+
+.header__search {
   position: relative;
-  grid-area: search;
   width: 90%;
+  grid-area: search;
+  transition: opacity $trans-default;
 
   input {
+    width: 100%;
+    padding: 5px 5px 5px 29px;
     display: flex;
     align-items: center;
     height: 40px;
+    color: $color-default-black;
     background-color: transparent;
     border: none;
+    outline-offset: 3px;
+
+    &::placeholder {
+      font-family: inherit;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 21px;
+      color: $color-grey;
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-default-black;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+    margin-bottom: 52px;
+
+    input {
+      padding: 12px 12px 12px 35px;
+      border-radius: 21px;
+      background-color: rgba(255, 255, 255, 0.15);
+
+      &::placeholder {
+        color: $color-transparent;
+      }
+    }
+
+    svg {
+      left: 13px;
+      color: $color-default-white;
+    }
+  }
+
+  @include vp-767 {
+    margin-bottom: 42px;
+  }
+
+  &:focus-within,
+  &:hover {
+    opacity: 0.7;
   }
 }
 
@@ -50,19 +170,80 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
 
-  &.main-nav {
+  &--main {
     grid-area: menu;
     justify-self: center;
+    margin-left: 93px;
+    gap: 35px;
   }
 
-  &.additional-nav {
+  &--additional {
     display: none;
   }
 
-  &.user-nav {
+  &--user {
+    margin-left: 66px;
+    margin-top: 8px;
     grid-area: user;
     justify-self: end;
+    font-size: 14px;
+  }
+
+  @include vp-1023 {
+    flex-direction: column;
+    color: $color-default-white;
+
+    &--main {
+      margin: 0 0 46px;
+      gap: 33px;
+      font-size: 24px;
+    }
+
+    &--additional {
+      margin: 0 0 46px;
+      display: flex;
+      flex-direction: column;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 18px;
+      gap: 19px;
+    }
+
+    &--user {
+      margin: 0;
+      font-size: 18px;
+    }
+  }
+
+  @include vp-767 {
+    &--main {
+      margin: 0 0 36px;
+    }
+
+    &--additional {
+      margin: 0 0 36px;
+    }
+  }
+}
+
+.header__nav-link {
+  font-weight: 500;
+  color: $color-main-dark;
+  transition: color $trans-default;
+  outline-offset: 2px;
+
+  @include vp-1023 {
+    color: inherit;
+  }
+
+  @include hover-focus {
+    color: $color-accent;
+  }
+
+  &:active {
+    color: $color-light-accent;
   }
 }
 
@@ -72,9 +253,69 @@
   align-items: center;
   background-color: transparent;
   border: none;
-  color: #000000;
+  color: inherit;
   display: none;
   padding: 0;
   position: relative;
   z-index: 25;
+
+  @include vp-1023 {
+    display: flex;
+    position: absolute;
+    top: 55px;
+    left: 45px;
+    transition: all 0.3s ease;
+  }
+
+  @include vp-767 {
+    top: 38px;
+    left: 15px;
+  }
+}
+
+.header.is-open {
+  color: $color-default-white;
+}
+
+.header__cart {
+  margin: 8px 2px 0 5px;
+  user-select: none;
+  font-size: 14px;
+  font-weight: 500;
+  justify-self: end;
+  align-self: start;
+  color: $color-main-dark;
+  transition: color $trans-default;
+  outline-offset: 2px;
+
+  svg {
+    display: none;
+
+    @include vp-1023 {
+      display: inline-block;
+      color: inherit;
+    }
+  }
+
+  @include vp-1023 {
+    grid-column: 2;
+    margin: 22px 0 0 0;
+
+    span {
+      display: none;
+    }
+  }
+
+  @include vp-767 {
+    margin: 5px 0 0 0;
+  }
+
+  @include hover-focus {
+    color: $color-accent;
+  }
+}
+
+.header.is-open .header__cart {
+  color: $color-default-white;
+  z-index: 15;
 }
