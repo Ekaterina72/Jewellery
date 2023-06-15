@@ -1,3 +1,91 @@
 .intro {
-  padding-top: 0;
+  padding: 102px 0;
+  position: relative;
+  font-family: $ff-cormorantgaramond;
+  color: $color-default-white;
+  overflow: clip;
+  background-color: $color-accent;
+
+  h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.3;
+    font-style: italic;
+  }
+
+  &--main {
+    padding: 182px 0 178px;
+
+    h1 {
+      font-size: 45px;
+      letter-spacing: 0.03em;
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 38px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(86, 64, 52, 0.7);
+    z-index: 1;
+  }
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    object-fit: cover;
+  }
+
+  @include vp-767 {
+    &--main {
+      padding: 194px 0 187px;
+
+      h1 {
+        font-size: 38px;
+        line-height: 1;
+      }
+
+      p {
+        font-size: 34px;
+      }
+    }
+  }
+}
+
+.intro__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include vp-1023 {
+    padding-left: 27px;
+  }
+
+  @include vp-767 {
+    padding-left: 16px;
+  }
 }
