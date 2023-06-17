@@ -1,0 +1,97 @@
+mixin new-in(options={})
+  -
+    const items = [
+      {
+        src: "purple-gemstone-necklace",
+        alt: "Necklace with amethyst.",
+        name: "Necklace with amethyst",
+        price: "145",
+      },
+      {
+        src: "layered-choker-necklace",
+        alt: "Layered сhoker.",
+        name: "Layered сhoker",
+        price: "115",
+      },
+      {
+        src: "dainty-gold-necklace",
+        alt: "Gold chain.",
+        name: "Gold chain",
+        price: "215",
+      },
+      {
+        src: "galaxy-earrings",
+        alt: "Galaxy earrings.",
+        name: "Galaxy earrings",
+        price: "95",
+      },
+      {
+        src: "purple-gemstone-necklace",
+        alt: "Necklace with amethyst.",
+        name: "Necklace with amethyst",
+        price: "145",
+      },
+      {
+        src: "layered-choker-necklace",
+        alt: "Layered сhoker.",
+        name: "Layered сhoker",
+        price: "115",
+      },
+      {
+        src: "dainty-gold-necklace",
+        alt: "Gold chain.",
+        name: "Gold chain",
+        price: "215",
+      },
+      {
+        src: "galaxy-earrings",
+        alt: "Galaxy earrings.",
+        name: "Galaxy earrings",
+        price: "95",
+      },
+      {
+        src: "purple-gemstone-necklace",
+        alt: "Necklace with amethyst.",
+        name: "Necklace with amethyst",
+        price: "145",
+      },
+      {
+        src: "layered-choker-necklace",
+        alt: "Layered сhoker.",
+        name: "Layered сhoker",
+        price: "115",
+      },
+      {
+        src: "dainty-gold-necklace",
+        alt: "Gold chain.",
+        name: "Gold chain",
+        price: "215",
+      },
+      {
+        src: "galaxy-earrings",
+        alt: "Galaxy earrings.",
+        name: "Galaxy earrings",
+        price: "95",
+      },
+    ];
+  section.new-in
+    .container
+      +section-heading({
+        title: "New&nbsp;In",
+        link: "Shop Now",
+        href: "#"
+      })(class="new-in__heading")
+      .swiper.new-in__slider-wrapper
+        ul.swiper-wrapper.new-in__slider
+          each item in items
+            li.swiper-slide.new-in__slide
+              .new-in__photo
+                +picture("content/new-in", item.src, "jpg", 270, 284, item.alt)
+              h3!= item.name
+              p $ !{item.price}
+        .swiper-pagination.new-in__slider-pagination
+        .new-in__slider-buttons
+          button.btn-reset.swiper-button-prev.new-in__slider-button-prev
+            +icon("icon-slider-arrow", 30, 11)
+          button.btn-reset.swiper-button-next.new-in__slider-button-next
+            +icon("icon-slider-arrow", 30, 11)

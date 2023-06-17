@@ -1,0 +1,151 @@
+.new-in {
+  padding: 120px 0 75px;
+
+  @include vp-1023 {
+    padding: 70px 0 40px;
+  }
+
+  @include vp-767 {
+    padding: 60px 0 35px;
+  }
+}
+
+.new-in__heading {
+  margin-bottom: 60px;
+
+  @include vp-1023 {
+    margin-bottom: 55px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 45px;
+  }
+}
+
+.new-in__slider-wrapper {
+  padding-top: 104px;
+  margin-top: -104px;
+
+  @include vp-767 {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
+.new-in__slider {
+  padding: 0;
+  margin: 0 0 41px;
+  list-style-type: none;
+
+  @include vp-1023 {
+    margin-bottom: 31px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 22px;
+  }
+}
+
+.new-in__slide {
+  height: auto;
+  padding: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-in__photo {
+  margin-bottom: 22px;
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+
+  @include vp-767 {
+    margin-bottom: 16px;
+  }
+}
+
+.new-in__slide h3 {
+  margin: 0 0 5px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.new-in__slide p {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.new-in__slider-pagination {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+
+  span {
+    width: auto;
+    height: auto;
+    background-color: $color-transparent;
+  }
+
+  @include vp-1023 {
+    gap: 5px;
+  }
+}
+
+.new-in__slider-button-prev,
+.new-in__slider-button-next {
+  top: 21px;
+  width: 29px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-accent;
+  transition: opacity $trans-default;
+
+  &::after {
+    content: "";
+  }
+
+  svg {
+    width: 30px;
+    height: 11px;
+  }
+
+  @include hover-focus {
+    opacity: 0.7;
+  }
+
+  @include vp-1023 {
+    top: 29px;
+    width: 36px;
+    height: 15px;
+
+    svg {
+      width: 36px;
+      height: 15px;
+    }
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+
+.new-in__slider-button-prev {
+  left: 0;
+}
+
+.new-in__slider-button-next {
+  transform: rotate(180deg);
+  right: 0;
+}

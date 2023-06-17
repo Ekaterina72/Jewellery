@@ -1,95 +1,281 @@
 <!DOCTYPE html>
-<html lang="eng">
-  <head>
-    <title>Chjewellery</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Chjewellery">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest" crossorigin="use-credentials">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="preload" href="fonts/poppins-medium.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/cormorantgaramond-bold.woff2" as="font" crossorigin="anonymous">
-    <link rel="preload" href="fonts/cormorantgaramond-italic.woff2" as="font" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.min.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header header--sticky" data-header="sticky" data-hide-point="50">
-        <div class="container"><span class="header__logo">
-            <svg width="66" height="66" aria-hidden="true">
-              <use xlink:href="./img/stack.svg#logo"></use>
-            </svg></span>
-          <nav class="header__nav">
-            <button class="header__nav-toggle btn-reset" type="button" aria-label="Переключатель отображения меню" aria-pressed="false" data-burger>
-              <svg width="25" height="18" aria-hidden="true">
-                <use xlink:href="./img/stack.svg#icon-burger"></use>
-              </svg>
-            </button>
-            <div class="header__nav-wrapper">
-              <div class="header__search">
-                <form method="get">
-                  <input type="search" placeholder="Type here to search" name="search">
-                  <svg width="14" height="14" aria-hidden="true">
-                    <use xlink:href="./img/stack.svg#icon-search"></use>
-                  </svg>
-                </form>
-              </div>
-              <ul class="header__nav-list header__nav-list--main">
-                <li class="header__nav-item"><a class="header__nav-link" href="#">What’s new</a>
-                </li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#">Chokers</a>
-                </li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#">Necklaces</a>
-                </li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#">Rings</a>
-                </li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#">Earrings</a>
-                </li>
-              </ul>
-              <ul class="header__nav-list header__nav-list--additional">
-                <li class="header__nav-item"><a class="header__nav-link" href="#">About CH</a>
-                </li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#">Stores &amp;&nbsp;Hours</a>
-                </li>
-                <li class="header__nav-item"><a class="header__nav-link" href="#">Contact Us</a>
-                </li>
-              </ul>
-              <ul class="header__nav-list header__nav-list--user">
-                <li class="header__nav-item">
-                  <button class="btn-reset header__nav-link">Login</button>
-                </li>
-              </ul>
+<html lang="en">
+
+<head>
+  <title>Chjewellery</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Chjewellery">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest" crossorigin="use-credentials">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="fonts/poppins-medium.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-bold.woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/cormorantgaramond-italic.woff2" as="font" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header header--sticky" data-header="sticky" data-hide-point="50">
+      <div class="container"><span class="header__logo">
+          <svg width="66" height="66" aria-hidden="true">
+            <use xlink:href="./img/stack.svg#logo"></use>
+          </svg></span>
+        <nav class="header__nav">
+          <button class="header__nav-toggle btn-reset" type="button" aria-label="Переключатель отображения меню"
+            aria-pressed="false" data-burger>
+            <svg width="25" height="18" aria-hidden="true">
+              <use xlink:href="./img/stack.svg#icon-burger"></use>
+            </svg>
+          </button>
+          <div class="header__nav-wrapper">
+            <div class="header__search">
+              <form method="get">
+                <input type="search" placeholder="Type here to search" name="search">
+                <svg width="14" height="14" aria-hidden="true">
+                  <use xlink:href="./img/stack.svg#icon-search"></use>
+                </svg>
+              </form>
             </div>
-            <button class="header__cart btn-reset" type="button"><span>Cart</span>
-              <svg width="20" height="18" aria-hidden="true">
-                <use xlink:href="./img/stack.svg#icon-cart"></use>
-              </svg><span data-cart-count> 0</span>
-            </button>
-          </nav>
-        </div>
-      </header>
-      <main class="main">
-        <section class="intro intro--main">
-          <picture>
-            <source type="image/webp" srcset="img/content/main-index.webp, img/content/main-index@2x.webp 2x"><img src="img/content/main-index.jpg" srcset="img/content/main-index@2x.jpg 2x" width="1366" height="463" alt="necklaces on a  women's neck">
-          </picture>
-          <div class="container intro__content">
-            <h1>PERFECTION</h1>
-            <p>made to be yours</p>
+            <ul class="header__nav-list header__nav-list--main">
+              <li class="header__nav-item"><a class="header__nav-link" href="#">What’s new</a>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#">Chokers</a>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#">Necklaces</a>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#">Rings</a>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#">Earrings</a>
+              </li>
+            </ul>
+            <ul class="header__nav-list header__nav-list--additional">
+              <li class="header__nav-item"><a class="header__nav-link" href="#">About CH</a>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#">Stores &amp;&nbsp;Hours</a>
+              </li>
+              <li class="header__nav-item"><a class="header__nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
+            <ul class="header__nav-list header__nav-list--user">
+              <li class="header__nav-item">
+                <button class="btn-reset header__nav-link">Login</button>
+              </li>
+            </ul>
           </div>
-        </section>
-      </main>
-      <footer class="footer">
-        <div class="container"></div>
-      </footer>
-    </div>
-    <script src="js/vendor.min.js"></script>
-    <script src="js/main.min.js"></script>
-  </body>
+          <button class="header__cart btn-reset" type="button"><span>Cart</span>
+            <svg width="20" height="18" aria-hidden="true">
+              <use xlink:href="./img/stack.svg#icon-cart"></use>
+            </svg><span data-cart-count> 0</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <section class="intro intro--main">
+        <picture>
+          <source type="image/webp" srcset="img/content/main-index.webp, img/content/main-index@2x.webp 2x"><img
+            src="img/content/main-index.jpg" srcset="img/content/main-index@2x.jpg 2x" width="1366" height="463"
+            alt="necklaces on a  women's neck">
+        </picture>
+        <div class="container intro__content">
+          <h1>perfection</h1>
+          <p>made to be yours</p>
+        </div>
+      </section>
+      <section class="new-in">
+        <div class="container">
+          <div class="section-heading new-in__heading">
+            <h2>New&nbsp;In</h2><a href="#">Shop Now</a>
+          </div>
+          <div class="swiper new-in__slider-wrapper">
+            <ul class="swiper-wrapper new-in__slider">
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/purple-gemstone-necklace.webp, img/content/new-in/purple-gemstone-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/purple-gemstone-necklace.jpg"
+                      srcset="img/content/new-in/purple-gemstone-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Necklace with amethyst.">
+                  </picture>
+                </div>
+                <h3>Necklace with amethyst</h3>
+                <p>$ 145</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/layered-choker-necklace.webp, img/content/new-in/layered-choker-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/layered-choker-necklace.jpg"
+                      srcset="img/content/new-in/layered-choker-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Layered сhoker.">
+                  </picture>
+                </div>
+                <h3>Layered сhoker</h3>
+                <p>$ 115</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/dainty-gold-necklace.webp, img/content/new-in/dainty-gold-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/dainty-gold-necklace.jpg"
+                      srcset="img/content/new-in/dainty-gold-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Gold chain.">
+                  </picture>
+                </div>
+                <h3>Gold chain</h3>
+                <p>$ 215</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/galaxy-earrings.webp, img/content/new-in/galaxy-earrings@2x.webp 2x">
+                    <img src="img/content/new-in/galaxy-earrings.jpg"
+                      srcset="img/content/new-in/galaxy-earrings@2x.jpg 2x" width="270" height="284"
+                      alt="Galaxy earrings.">
+                  </picture>
+                </div>
+                <h3>Galaxy earrings</h3>
+                <p>$ 95</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/purple-gemstone-necklace.webp, img/content/new-in/purple-gemstone-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/purple-gemstone-necklace.jpg"
+                      srcset="img/content/new-in/purple-gemstone-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Necklace with amethyst.">
+                  </picture>
+                </div>
+                <h3>Necklace with amethyst</h3>
+                <p>$ 145</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/layered-choker-necklace.webp, img/content/new-in/layered-choker-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/layered-choker-necklace.jpg"
+                      srcset="img/content/new-in/layered-choker-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Layered сhoker.">
+                  </picture>
+                </div>
+                <h3>Layered сhoker</h3>
+                <p>$ 115</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/dainty-gold-necklace.webp, img/content/new-in/dainty-gold-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/dainty-gold-necklace.jpg"
+                      srcset="img/content/new-in/dainty-gold-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Gold chain.">
+                  </picture>
+                </div>
+                <h3>Gold chain</h3>
+                <p>$ 215</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/galaxy-earrings.webp, img/content/new-in/galaxy-earrings@2x.webp 2x">
+                    <img src="img/content/new-in/galaxy-earrings.jpg"
+                      srcset="img/content/new-in/galaxy-earrings@2x.jpg 2x" width="270" height="284"
+                      alt="Galaxy earrings.">
+                  </picture>
+                </div>
+                <h3>Galaxy earrings</h3>
+                <p>$ 95</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/purple-gemstone-necklace.webp, img/content/new-in/purple-gemstone-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/purple-gemstone-necklace.jpg"
+                      srcset="img/content/new-in/purple-gemstone-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Necklace with amethyst.">
+                  </picture>
+                </div>
+                <h3>Necklace with amethyst</h3>
+                <p>$ 145</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/layered-choker-necklace.webp, img/content/new-in/layered-choker-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/layered-choker-necklace.jpg"
+                      srcset="img/content/new-in/layered-choker-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Layered сhoker.">
+                  </picture>
+                </div>
+                <h3>Layered сhoker</h3>
+                <p>$ 115</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/dainty-gold-necklace.webp, img/content/new-in/dainty-gold-necklace@2x.webp 2x">
+                    <img src="img/content/new-in/dainty-gold-necklace.jpg"
+                      srcset="img/content/new-in/dainty-gold-necklace@2x.jpg 2x" width="270" height="284"
+                      alt="Gold chain.">
+                  </picture>
+                </div>
+                <h3>Gold chain</h3>
+                <p>$ 215</p>
+              </li>
+              <li class="swiper-slide new-in__slide">
+                <div class="new-in__photo">
+                  <picture>
+                    <source type="image/webp"
+                      srcset="img/content/new-in/galaxy-earrings.webp, img/content/new-in/galaxy-earrings@2x.webp 2x">
+                    <img src="img/content/new-in/galaxy-earrings.jpg"
+                      srcset="img/content/new-in/galaxy-earrings@2x.jpg 2x" width="270" height="284"
+                      alt="Galaxy earrings.">
+                  </picture>
+                </div>
+                <h3>Galaxy earrings</h3>
+                <p>$ 95</p>
+              </li>
+            </ul>
+            <div class="swiper-pagination new-in__slider-pagination"></div>
+            <div class="new-in__slider-buttons">
+              <button class="btn-reset swiper-button-prev new-in__slider-button-prev">
+                <svg width="30" height="11" aria-hidden="true">
+                  <use xlink:href="./img/stack.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+              <button class="btn-reset swiper-button-next new-in__slider-button-next">
+                <svg width="30" height="11" aria-hidden="true">
+                  <use xlink:href="./img/stack.svg#icon-slider-arrow"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container"></div>
+    </footer>
+  </div>
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
 </html>

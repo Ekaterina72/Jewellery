@@ -2,9 +2,9 @@ mixin intro(options={})
   - const title = options.title || "";
   - const subtitle = options.subtitle || "";
   - const image = options.image;
+  - const alt = options.alt;
   section.intro&attributes(attributes)
-    +picture("content", image, "jpg", 1366, 463, "necklaces on a  women's neck")
+    +picture("content", image, "jpg", 1366, 463, alt)
     .container.intro__content
       h1!= title
       p!= subtitle
-

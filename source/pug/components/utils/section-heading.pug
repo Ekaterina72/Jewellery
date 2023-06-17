@@ -1,0 +1,7 @@
+mixin section-heading(options={})
+  - const title = options.title;
+  - const link = options.link;
+  - const href = options.href;
+  .section-heading&attributes(attributes)
+    h2!= title
+    a(href=href)!= link
