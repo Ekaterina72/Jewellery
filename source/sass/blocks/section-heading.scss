@@ -1,8 +1,17 @@
 .section-heading {
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 5;
+
+  @include vp-767 {
+    width: 90%;
+  }
 }
 
 .section-heading h2 {
@@ -11,6 +20,7 @@
   font-weight: 700;
   font-size: 34px;
   line-height: 1.3;
+  letter-spacing: 0.03em;
 
   @include vp-1023 {
     margin-bottom: 19px;
@@ -27,7 +37,7 @@
   &::before {
     position: absolute;
     content: "";
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 100%;
     height: 1px;
@@ -35,10 +45,6 @@
     transform: scale(1);
     transform-origin: 50%;
     transition: transform $trans-default;
-
-    @include vp-1023 {
-      bottom: -5px;
-    }
   }
 
   &:hover::before,

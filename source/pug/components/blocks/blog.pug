@@ -1,0 +1,48 @@
+mixin blog()
+  -
+    const articles = [
+      {
+        img: "blog-1",
+        date: "September&nbsp;30, 2019",
+        datetime: "2019-09-30",
+        title: "How to&nbsp;care for your jewellery",
+        link: "Read Article",
+        href: "#",
+        alt: "украшения из золота."
+      },
+      {
+        img: "blog-2",
+        date: "September&nbsp;23, 2019",
+        datetime: "2019-09-23",
+        title: "Power of&nbsp;crystals",
+        link: "Read Article",
+        href: "#",
+        alt: "браслет из камней."
+      },
+      {
+        img: "blog-3",
+        date: "September&nbsp;16, 2019",
+        datetime: "2019-09-16",
+        title: "AW&nbsp;19&nbsp;trends",
+        link: "Read Article",
+        href: "#",
+        alt: "модель демонстрирует кольца и браслеты на руках."
+      },
+    ];
+
+  section.blog
+    .container
+      +section-heading({
+        title: "Blog",
+        link: "Read All",
+        href: "#",
+      })(class="blog__heading")
+      ul
+        each item in articles
+          li
+            .blog__article-photo
+              +picture("content/blog", item.img, jpg, 285, 300, item.alt)
+            .blog__article-content
+              time(datetime=item.datetime)!= item.date
+              h3!= item.title
+              a(href=item.href)!= item.link
