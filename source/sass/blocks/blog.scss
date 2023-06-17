@@ -166,11 +166,6 @@
   line-height: 1.3;
   color: $color-default-black;
 
-  @include vp-1279 {
-    // font-size: 22px;
-    // margin-bottom: 20px;
-  }
-
   @include vp-1023 {
     width: 65%;
   }
