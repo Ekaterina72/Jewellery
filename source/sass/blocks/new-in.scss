@@ -12,12 +12,14 @@
 
 .new-in__heading {
   margin-bottom: 60px;
+  width: 50%;
 
   @include vp-1023 {
     margin-bottom: 55px;
   }
 
   @include vp-767 {
+    width: 90%;
     margin-bottom: 45px;
   }
 }

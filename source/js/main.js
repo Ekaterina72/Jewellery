@@ -6,6 +6,7 @@ import {StickyHeader} from './modules/header/sticky-header';
 import {CustomSelect} from './modules/select/custom-select';
 import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
 import {initSwiper} from './modules/slider/new-in-slider';
+import {initAccordions} from './modules/accordion/init-accordion';
 
 // ---------------------------------
 
@@ -35,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     window.form = form;
     form.init();
     initSwiper();
+    initAccordions();
   });
 });
 

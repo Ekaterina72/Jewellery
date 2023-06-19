@@ -1,0 +1,35 @@
+mixin faq()
+  -
+    const questions = [
+      {
+        question: "What materials are the jewellery made&nbsp;of?",
+        answer: "Our jewellerry is&nbsp;made of&nbsp;solid gold, silver or&nbsp;leather. Also, some jewellery contains precious and semiprecious stones and crystals.",
+      },
+      {
+        question: "Which countries do you deliver to?",
+        answer: "United States, Japan, Brazil, Egypt, Australia",
+      },
+      {
+        question: "What are the payment methods?",
+        answer: "Credit card, PayPal, Bank transfer",
+      },
+      {
+        question: "Can I return the jewellery if it didn’t fit me?",
+        answer: "Yes, you can. Just contact us",
+      },
+    ];
+
+  section.faq(data-tabs="element")
+    .container
+      +section-heading({
+        title: "Frequently asked questions",
+      })(class="faq__heading")
+      .faq__list.accordion(data-accordion="parent", data-single)
+        each item in questions
+          .faq__list-item.accordion__element(data-accordion="element")
+            button.faq__list-item-button.accordion__button.btn-reset(type="button", data-accordion="button")
+              span!= item.question
+              +icon("icon-accordion-arrow", 17, 10)
+            .faq__list-item__content.accordion__content(data-accordion="content")
+              .faq__list-item__text.accordion__wrapper
+                p!= item.answer

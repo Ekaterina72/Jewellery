@@ -1,17 +1,13 @@
 .section-heading {
   position: relative;
-  width: 50%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   z-index: 5;
-
-  @include vp-767 {
-    width: 90%;
-  }
 }
 
 .section-heading h2 {
@@ -47,9 +43,12 @@
     transition: transform $trans-default;
   }
 
-  &:hover::before,
-  &:focus::before {
+  &:hover::before {
     transform: scale(0);
+  }
+
+  &:focus::before {
+    display: none;
   }
 
   &:active {
