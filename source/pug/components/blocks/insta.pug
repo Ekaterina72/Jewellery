@@ -1,0 +1,58 @@
+mixin insta()
+  -
+    const pics = [
+      {
+        src: "insta-8",
+        alt: "square golden earings",
+        width: "230",
+        height: "230",
+      },
+      {
+        src: "insta-2",
+        alt: "big golden earings on a model",
+        width: "399",
+        height: "412",
+      },
+      {
+        src: "insta-4",
+        alt: "golden ring and bracelets",
+        width: "230",
+        height: "230",
+      },
+      {
+        src: "insta-6",
+        alt: "round golden earings",
+        width: "230",
+        height: "230",
+      },
+      {
+        src: "insta-1",
+        alt: "golden earings with stones",
+        width: "230",
+        height: "150",
+      },
+      {
+        src: "insta-5",
+        alt: "the set of golden neckless, ring and earings",
+        width: "230",
+        height: "150",
+      },
+      {
+        src: "insta-7",
+        alt: "golden rings on a model",
+        width: "230",
+        height: "150",
+      },
+    ];
+  section.insta
+    .container
+      +section-heading({
+        title: "@Chjewellery",
+        link: "Follow&nbsp;Us",
+        href: "#",
+      })(class="insta__heading")
+      ul
+        each pic in pics
+          li
+            +picture("content/insta", pic.src, "jpg", pic.width, pic.height, pic.alt)
+

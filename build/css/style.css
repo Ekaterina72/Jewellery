@@ -2502,7 +2502,7 @@ button,
 }
 
 .faq {
-  padding: 45px 0 30px;
+  padding: 45px 0 50px;
 }
 @media (max-width: 1023px) {
   .faq {
@@ -2630,6 +2630,81 @@ button,
   .faq__list-item__text p {
     font-size: 14px;
     line-height: 1.4;
+  }
+}
+
+.insta {
+  padding: 60px 0 65px;
+}
+@media (max-width: 1023px) {
+  .insta {
+    padding-top: 44px;
+  }
+}
+@media (max-width: 767px) {
+  .insta {
+    padding-top: 32px;
+  }
+}
+
+.insta__heading {
+  margin-bottom: 71px;
+}
+@media (max-width: 1023px) {
+  .insta__heading {
+    margin-bottom: 65px;
+  }
+}
+@media (max-width: 767px) {
+  .insta__heading {
+    margin-bottom: 51px;
+  }
+}
+
+.insta ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% 35% 20% 20%;
+  grid-template-columns: 20% 35% 20% 20%;
+  -webkit-column-gap: 2%;
+     -moz-column-gap: 2%;
+          column-gap: 2%;
+  row-gap: 8%;
+  list-style-type: none;
+}
+@media (max-width: 767px) {
+  .insta ul {
+    -ms-grid-columns: (45%)[2];
+    grid-template-columns: repeat(2, 45%);
+    justify-items: center;
+    -webkit-column-gap: 9%;
+       -moz-column-gap: 9%;
+            column-gap: 9%;
+    row-gap: 9%;
+  }
+}
+
+.insta li:nth-of-type(2) {
+  -ms-grid-row-span: 2;
+  grid-row: span 2;
+  min-height: 100%;
+}
+@media (max-width: 767px) {
+  .insta li:nth-of-type(2) {
+    max-width: 225px;
+  }
+}
+@media (max-width: 767px) {
+  .insta li:nth-of-type(2) img {
+    aspect-ratio: 133/247;
+  }
+}
+@media (max-width: 767px) {
+  .insta li:nth-of-type(3), .insta li:nth-of-type(4) {
+    display: none;
   }
 }
 
